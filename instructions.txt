@@ -1,0 +1,70 @@
+# Instructions
+
+## Basic Guidelines
+You are required to code the sample page given to you, by hand, from scratch - not using a pagebuilder or visual design software. Here you have been given all the files and information you need in order to reproduce the layout. 
+
+Try not to rush. Speed is good, but *accuracy* and *tidyness* are much more important. The closer you get to the intended design, the better. It is also extremely important to keep your code 'tidy': organised, well-structured, and readable. 
+
+If you need more information, ask. 
+
+## General Exercise Information 
+The layout uses 3 colours only:
+
+@purple: #310C3D
+@orange: #F18805
+@yellow: #E8BF2E
+
+It uses an open source font called 'Alegreya', which you can find in the Google Fonts library, here:
+
+https://fonts.google.com/specimen/Alegreya
+
+You **must** use the required font and required colours in your stylesheet.
+
+The layout uses a few images, which have been provided as part of the exercise. You **must** use the provided images, as required in the layout.
+
+You must code a RESPONSIVE layout, using appropriate _@media_ queries in your stylesheet. In order to see how the layout should change when going from mobile to desktop, you have been provided 2 versions of the same page - the 'mobile' version, and the 'desktop' version. 
+
+The layout has a few interactive elements - buttons and form fields. To see how these elements should be styled on different states - e.g., when the cursor is hovering over them, or when they are being clicked - see the 'interactivity' page.
+
+## Hero Banner - Top Purple Section
+The first section at the top of the page is the 'Hero Banner'. It has a Main Heading, a Sub-heading, and a call-to-action button. The requirements here are:
+- the hero section should always take up the full height of the viewport - ie., it should always fill up the full window with the purple background
+- the 3 elements - Main Heading, Sub-heading and call-to-action - should always be vertically and horizontally centered in the Hero
+- clicking the 'contact us' button should scroll the page down to the 'Contact Us' section
+- regardless of how much text there is in the Main Heading or Sub-heading, the text blocks should have a maximum width of 550px, and there should always be at least a 15px margin between the text and the sides of the window.
+
+Helpful specs:
+- font size of Main Heading is 36px 
+- font size of Sub-heading is 18px
+- font size of button text is 14px, and font weight is Extra Bold
+
+## 'Info' Section - Orange Section
+The 'Info' section has an featured image, a block of text, and a 'down' button - a yellow triangle at the bottom of the section. On mobile, the featured image, the text and the button appear on a single column, on top of each other. On desktop, the block of text and the featured image appear side-by-side, on a 2-column layout. Regardless of how wide the browser window is, the 2-column layout of the text and image together should never be wider than 640px. 
+
+Helpful specs:
+- Section heading text is Alegreya Extra Bold, 28px
+- Body text is Alegreya Regular, 18px
+- Image border is 4px thick, with a radius of 50px
+
+## Contact Section - Yellow Section
+The Contact section contains a block of text, and a contact form. It also shows a semi-transparent image in the background. On mobile, the image is aligned at the bottom of the section, and takes up about 70% of the full width of the screen. On desktop, it is aligned to the left, and takes up about 40% of the entire screen width.
+
+Helpful specs:
+- Font size and weight of section heading and body text are the same as in 'Info' section
+- Form fields use Alegreya Regular, 18px. Placeholder text is 40% transparent.
+- Form fields have a 1px orange border, and an orange background set to 25% transparent.
+- Font of 'Send' button is 14px Alegreya Extra Bold - same as the call-to-action in the hero section
+
+The form does NOT have to be functional for the purposes of this exercise - ie., clicking 'Send' doesn't have to do anything. We just need to make the fields interactive - ie., change appearance when hovered and clicked on. 
+
+## Footer
+The footer uses a tiled, semi-transparent background image. It has one single line of text, which should be centered on desktop, and left-aligned on mobile. The text is set in 12px Alegreya Medium, and has a 6px yellow drop-shadow.
+
+## Minimum Requirements
+You are expected to code and style your page using **HTML5** and **CSS3**. It is possible to complete the entire exercise using only HTML+CSS, but if you'd like to add extra effects or inteactivity by using Javascript, you are welcome to do so.
+
+You are welcome to program using 'vanilla' HTML/CSS, but you will get extra points if you are able to use pre-processor languages such as Pug, LESS or SASS/SCSS.
+
+## Frameworks
+You are expected to code this page _without_ using a framework such as Bootstrap, Foundation, Bulma or Semantic UI. If, however, you do want to use a framework, you are allowed to use UIkit (http://getuikit.com) - and proficient use of UIkit will also give you extra marks. 
+

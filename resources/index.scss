@@ -1,0 +1,317 @@
+
+$colors: (
+    purple: #310C3D,
+    purple-light: rgba(49, 12, 61, 0.699),
+    orange: #F18805,
+    orange-light: rgba(241, 135, 5, 0.25),
+    yellow: #E8BF2E,
+    yellow-light: rgba(232, 192, 46, 0.50),
+);
+
+$font: 'Alegreya', serif;
+$desktop: 840px;
+
+@mixin color-modifiers($attribute) {
+    @each $name, $hex in $colors {
+        &-#{""+$name} {
+            #{$attribute}: $hex;
+        }
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+body, html {
+    height: 100%;
+    margin: 0px 0px;
+    font-family: $font;
+    color: white;
+    // scroll-behavior: smooth;
+}
+
+h1, p {
+    margin: 0px 0px;
+}
+
+.row {
+    display: flex;
+
+    .btn {
+        font-family: $font;
+        font-weight: bolder;
+        border-radius: 2em;
+        padding: .6em 2.5em;
+        background-color: transparent;
+        border: 2px solid;
+        cursor: pointer;
+    }
+}
+
+.hero-banner{
+
+    .row {
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col {
+        margin: 0px 2.5em;
+        max-width: 550px;
+        text-align: center;   
+    
+        .main-heading {
+            font-size: 36px;
+            margin: 0 0;
+            font-weight: 200;
+        }
+    
+        .sub-heading {
+            font-size: 18px;
+            margin: 0 0 2em 0;
+            font-weight: 800;
+        }
+
+        .call-to-action {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bolder;
+            border-color: map-get($colors, yellow);
+            color: map-get($colors, yellow);
+
+            &:hover {
+                background-color: map-get($colors , orange-light);
+            }
+
+            &:active {
+                background-color: map-get($colors, yellow-light);
+            }
+        }
+    }    
+}
+
+.info, .contact {
+    padding: 3em 2em;
+    
+    .row {
+        display: block;
+        max-width: 640px;
+        width: 100%;
+        
+        .col {
+            width: 100%;
+
+            .info-img {
+                display: block;
+                border: 4px solid map-get($colors, purple);
+                border-radius: 50px;
+                width: 97%;
+                margin-bottom: 1.5em;
+            }
+            
+            .heading {
+                font-size: 28px;
+                line-height: 32px;
+                font-weight: bolder;
+                z-index: 99;
+            }
+
+            .body-text {
+                font-weight: 500;
+                margin-top: .5em;
+                font-size: 18px;
+                margin-bottom: 2em;
+                line-height: 21px;
+                z-index: 99;
+            }
+            
+        }   
+        
+        form {
+            .fields {
+                border: 2px solid map-get($colors, orange);
+                background-color: map-get($colors, orange-light);
+                margin-bottom: 10px;
+                color: map-get($colors, purple);
+                font-family: $font;
+                font-size: 18px;
+                padding-left: 1em;
+
+                &:focus {     
+                    border: 2px solid map-get($colors, purple);
+                }
+
+                &::placeholder {
+                    font-family: $font;
+                    font-size: 18px;
+                    color: map-get($colors, purple);
+                    opacity: .5;
+                }
+            }
+
+            input {
+                width: 91%;
+                height: 40px;
+            }
+    
+            textarea {
+                width: 90%;
+                padding-top: .6em;
+            }
+
+        }
+
+        .btn-purple {
+            text-align: right;
+            font-size: 14px;
+
+            &:hover {
+                background-color: map-get($colors , orange-light);
+            }
+
+            &:active {
+                background-color: map-get($colors, orange);
+            }
+        }
+
+        .bg-img {
+            position: absolute;
+            z-index: 0;
+            opacity: .3;
+            height: 210px;
+            transform: translateY(20em)
+        }
+    }
+
+    .row-btn {
+        display: flex;
+        justify-content: center;
+
+        .triangle {
+            cursor: pointer;
+            height: 25px;
+        }
+
+        // .triangle {
+        //     margin: 0 auto;
+        //     width: 0;
+        //     height: 0;
+        //     border-left: 13px solid transparent;
+        //     border-right: 13px solid transparent;
+        //     border-top: 25px solid map-get($colors, yellow);
+
+        //     &:hover {
+        //         cursor: pointer;
+        //         border-top: 25px solid map-get($colors, purple);
+        //         transition: .5s;
+        //     }
+        // }
+    }    
+
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        .row-btn {
+            position: absolute;
+            transform: translateY(10em);
+        }
+
+        .row {
+            display: flex;
+
+            .col {
+                flex-grow: 1;
+
+                .heading {
+                    font-size: 35px;
+                }
+                
+                .body-text {
+                    font-size: 20px;
+                }
+            }
+
+            .col-1 {
+                order: 2;
+            }
+
+            .col-2 {
+                order: 1;
+                padding-right: 3.5em;
+            }
+
+            .break {
+                flex-basis: 100%;
+                height: 0;
+            }
+
+            .bg-img {
+                height: 21.5em;
+                transform: translate(-170px, 0px);
+                z-index: -1;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .contact {
+        .row {
+            z-index: 10;
+            max-width: 600px;
+            .col {
+                padding-left: 1.5em;
+            }
+        } 
+    }
+}
+
+
+footer {
+    background-image: url('../media/bright-squares.png');
+    background-blend-mode: hard-light;
+    
+    height: 90px;
+    padding: 1.5em 1.5em;
+    display: flex;
+    align-items: flex-end;
+    
+    p {
+        font-size: 12px;
+        font-weight: 500;
+        text-shadow: 0 0 2px map-get($colors, yellow), 0 0 5px map-get($colors, yellow);
+    }
+
+    
+    @include desktop {
+        justify-content: center;
+
+        p {
+            text-align: center;
+        }
+    }
+}
+
+
+//utility classes
+.text-right {
+    text-align: right;
+}
+
+.text {
+    @include color-modifiers('color');
+}
+
+.bg {
+    @include color-modifiers('background-color');
+}
+
+
+

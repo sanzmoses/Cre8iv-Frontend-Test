@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:400,500,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/index.css">
+
+    <title></title>
+</head>
+<body>
+    <main id="top" class="container">
+        <section class="hero-banner bg-purple">
+            <div class="row">
+                <div class="col">
+                    <h1 class="main-heading text-yellow">Hello World!</h3>
+                        <p class="sub-heading text-orange">lorem ipsum dolor sit amet, consectetuer adipisc elit</p>
+                    <button value="#contact" class="btn call-to-action">contact us</button>
+                </div>
+            </div>
+        </section>
+        <section class="info bg-orange">
+            <div class="row">
+                <div class="col col-1">
+                    <img class="info-img" src="./media/orange.jpg" alt="">
+                </div>
+                <div class="col col-2 text-purple">
+                    <h1 class="heading">Pharetra Magna Etiam Mollis</h1>
+                    <p class="body-text">Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                </div>
+            </div>
+            <div class="row-btn">
+                <img value="#contact" 
+                onmouseover="hover(this);" 
+                onmouseout="unhover(this);" 
+                src="./media/triangle-yellow.svg" 
+                class="triangle">
+            </div>
+        </section>
+        <section id="contact" class="contact bg-yellow">
+            <div class="row">
+                <img class="bg-img" src="./media/network.png" alt="">
+                <div class="col text-purple">
+                    <h1 class="heading">Contact Us!</h1>
+                    <p class="body-text">Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper.</p>
+                </div>
+                <div class="col">
+                    <form onsubmit="event.preventDefault();">
+                        <input class="fields" type="text" placeholder="My Name">
+                        <input class="fields" type="text" placeholder="My Email">
+                        <textarea class="fields" placeholder="My Message" id="" rows="7"></textarea>
+                        <div class="text-right">
+                            <button value="#top" class="btn btn-purple">send</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </section>
+        <footer class="bg-purple">
+            <p class="text-yellow">@2020, Cre8tiv Click - all rights reserved</p>
+        </footer>
+    </main>
+
+    <script src="public/index.js"></script>
+</body>
+</html>
