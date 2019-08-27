@@ -1,11 +1,292 @@
 // BASE IMPORT
 @import '_base';
 
+body, html {
+    height: 100%;
+    margin: 0px 0px;
+    font-family: @font;
+    color: white;
+    // scroll-behavior: smooth;
+}
 
-// PAGE FRAMEWORK OVERRIDES
-@dotnav-width: @base-body-font-size;
-@overlay-panel-background: fade(@white, 20%);
+h1, p {
+    margin: 0px 0px;
+}
 
+.row {
+    display: flex;
+
+    .btn {
+        font-family: @font;
+        font-weight: bolder;
+        border-radius: 2em;
+        padding: .6em 2.5em;
+        background-color: transparent;
+        border: 2px solid;
+        cursor: pointer;
+    }
+}
 
 // PAGE SECTION STYLES
 /* #hero, #about, #contact, etc. */
+
+.hero-banner{
+
+    .row {
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col {
+        margin: 0px 2.5em;
+        max-width: 550px;
+        text-align: center;   
+    
+        .main-heading {
+            font-size: 36px;
+            margin: 0 0;
+            font-weight: 200;
+        }
+    
+        .sub-heading {
+            font-size: 18px;
+            margin: 0 0 2em 0;
+            font-weight: 800;
+        }
+
+        .call-to-action {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bolder;
+            border-color: @yellow;
+            color: @yellow;
+
+            &:hover {
+                background-color: @orange-light;
+            }
+
+            &:active {
+                background-color: @yellow-light;
+            }
+        }
+    }    
+}
+
+.info, .contact {
+    padding: 3em 2em;
+    
+    .row {
+        display: block;
+        max-width: 640px;
+        width: 100%;
+        
+        .col {
+            width: 100%;
+
+            .info-img {
+                display: block;
+                border: 4px solid @purple;
+                border-radius: 50px;
+                width: 97%;
+                margin-bottom: 1.5em;
+            }
+            
+            .heading {
+                font-size: 28px;
+                line-height: 32px;
+                font-weight: bolder;
+                z-index: 99;
+            }
+
+            .body-text {
+                font-weight: 500;
+                margin-top: .5em;
+                font-size: 18px;
+                margin-bottom: 2em;
+                line-height: 21px;
+                z-index: 99;
+            }
+            
+        }   
+        
+        form {
+            .fields {
+                border: 2px solid @orange;
+                background-color: @orange-light;
+                margin-bottom: 10px;
+                color: @purple;
+                font-family: @font;
+                font-size: 18px;
+                padding-left: 1em;
+
+                &:focus {     
+                    border: 2px solid @purple;
+                }
+
+                &::placeholder {
+                    font-family: @font;
+                    font-size: 18px;
+                    color: @purple;
+                    opacity: .5;
+                }
+            }
+
+            input {
+                width: 91%;
+                height: 40px;
+            }
+    
+            textarea {
+                width: 90%;
+                padding-top: .6em;
+            }
+
+        }
+
+        .btn-purple {
+            text-align: right;
+            font-size: 14px;
+
+            &:hover {
+                background-color:@orange-light;
+            }
+
+            &:active {
+                background-color: @orange;
+            }
+        }
+
+        .bg-img {
+            position: absolute;
+            z-index: 0;
+            opacity: .3;
+            height: 210px;
+            transform: translateY(20em)
+        }
+    }
+
+    .row-btn {
+        display: flex;
+        justify-content: center;
+
+        .triangle {
+            cursor: pointer;
+            height: 25px;
+        }
+
+        // .triangle {
+        //     margin: 0 auto;
+        //     width: 0;
+        //     height: 0;
+        //     border-left: 13px solid transparent;
+        //     border-right: 13px solid transparent;
+        //     border-top: 25px solid map-get($colors, yellow);
+
+        //     &:hover {
+        //         cursor: pointer;
+        //         border-top: 25px solid map-get($colors, purple);
+        //         transition: .5s;
+        //     }
+        // }
+    }    
+
+    .desktop(@desktop, {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        .row-btn {
+            position: absolute;
+            transform: translateY(10em);
+        }
+
+        .row {
+            display: flex;
+
+            .col {
+                flex-grow: 1;
+
+                .heading {
+                    font-size: 35px;
+                }
+                
+                .body-text {
+                    font-size: 20px;
+                }
+            }
+
+            .col-1 {
+                order: 2;
+            }
+
+            .col-2 {
+                order: 1;
+                padding-right: 3.5em;
+            }
+
+            .break {
+                flex-basis: 100%;
+                height: 0;
+            }
+
+            .bg-img {
+                height: 21.5em;
+                transform: translate(-170px, 0px);
+                z-index: -1;
+            }
+        }
+    })
+}
+
+.desktop (@desktop, {
+    .contact {
+        .row {
+            z-index: 10;
+            max-width: 600px;
+            .col {
+                padding-left: 1.5em;
+            }
+        } 
+    }
+});
+
+footer {
+    background-image: url('../images/bright-squares.png');
+    background-blend-mode: hard-light;
+    
+    height: 90px;
+    padding: 1.5em 1.5em;
+    display: flex;
+    align-items: flex-end;
+    
+    p {
+        font-size: 12px;
+        font-weight: 500;
+        text-shadow: 0 0 2px @yellow, 0 0 5px @yellow;
+    }
+
+    
+    .desktop (@desktop, {
+        justify-content: center;
+
+        p {
+            text-align: center;
+        }
+    })
+}
+
+//utility classes
+.text-right {
+    text-align: right;
+}
+
+.text {
+	.modifier(color);
+}
+
+.bg {
+	.modifier(background-color);
+}
+

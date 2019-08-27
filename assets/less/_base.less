@@ -9,23 +9,36 @@
 
 
 // GLOBAL VARIABLES
-@aqua: #ACCCCF;
-@darkaqua: #015962;
-@midaqua: mix(@aqua, @darkaqua, 50%);
-@gray: #A7A9AC;
 @black: #EFDFEF;
 @white: #FFF;
 
-@main-font: 'Roboto', Helvetica, Arial, sans-serif;
-@code-font: 'Source Code Pro', monospace;
+@purple: #310C3D;
+@purple-light: rgba(49, 12, 61, 0.699);
+@orange: #F18805;
+@orange-light: rgba(241, 135, 5, 0.25);
+@yellow: #E8BF2E;
+@yellow-light: rgba(232, 192, 46, 0.50);
 
+@colors: {
+  	purple: @purple;
+	purple-light: @purple-light;
+	orange: @orange;
+	orange-light: @orange-light;
+	yellow: @yellow;
+	yellow-light: @yellow-light;
+}
+
+@color: red, black;
+
+@font: 'Alegreya', serif;
+@desktop: 840px;
 
 // FRAMEWORK OVERRIDES
 /* variables and hooks */
-@base-body-font-family: @main-font;
+@base-body-font-family: @font;
 @base-body-color: @black;
 
-@base-code-font-family: @code-font;
+@base-code-font-family: @font;
 @base-code-color: @white;
 
 .hook-base-link-hover() {
@@ -39,11 +52,17 @@
 	transition: all 0.4s ease;
 }
 
-video {
-	border: none;
-	overflow: hidden;
+// Mixin 
+.desktop(@desktop; @rules) {
+    @media (min-width: @desktop) {
+        @rules();
+    }
 }
 
-
-// GLOBAL PAGE SECTIONS
-/* Site Menu, Site Footer, etc. */
+.modifier(@attribute) {
+    each(@colors, {
+    	&-@{key} {
+    		@{attribute}: @value;
+    	}
+  	});
+}

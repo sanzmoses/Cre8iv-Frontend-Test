@@ -1,7 +1,4 @@
 //@codekit-prepend _base.js
-
-sayHello();	
-
 function scrollIt(destination, duration = 200, easing = 'easeOutCubic', callback) {
 
     const easings = {
@@ -58,9 +55,9 @@ function scrollIt(destination, duration = 200, easing = 'easeOutCubic', callback
   });
 
   function hover(element) {
-    element.setAttribute('src', './media/triangle-purple.svg');
+    element.setAttribute('src', './assets/images/triangle-purple.svg');
   }
   
   function unhover(element) {
-    element.setAttribute('src', './media/triangle-yellow.svg');
+    element.setAttribute('src', './assets/images/triangle-yellow.svg');
   }
